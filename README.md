@@ -1,55 +1,55 @@
 # AfetComms
 
-İnternet bağlantısı olmadan aile ve kurtarma ekipleri arasında acil durum iletişimi için Android uygulaması.
+An Android application for emergency communication between families and rescue teams without an internet connection.
 
-## Özellikler
+## Features
 
-- **Güvendeyim / SOS** mesajları (konum ekli)
-- **BLE** ve **Wi-Fi Direct** taşıma katmanı
-- **Simülasyon modu** — tek telefonda test
-- **SOS tam ekran uyarı** + bildirim + titreşim
-- **Mesaj geçmişi**, TTL, outbox / retry
-- **Aile üyesi** listesi ve **Ayarlar** ekranı
+- **I'm Safe / SOS** messages (with location attached)
+- **BLE** and **Wi-Fi Direct** transport layer
+- **Simulation mode** — for single-device testing
+- **Full-screen SOS alert** + notification + vibration
+- **Message history**, TTL, outbox / retry mechanism
+- **Family member** list and **Settings** screen
 
-## Gereksinimler
+## Requirements
 
 - Android 8.0+ (API 26)
-- Bluetooth LE (gerçek mod için)
-- İzinler: Bluetooth, konum (BLE), bildirim, titreşim
+- Bluetooth LE (for real device testing)
+- Permissions: Bluetooth, Location (BLE), Notifications, Vibration
 
-## Kurulum
+## Installation
 
-1. Android Studio ile projeyi açın
+1. Open the project with Android Studio
 2. **Sync Project with Gradle Files**
-3. Fiziksel cihazda **Run** (emülatörde BLE sınırlıdır)
+3. **Run** on a physical device (BLE functionality is limited on emulators)
 
 ```bash
 ./gradlew assembleDebug
 ```
 
-## Tek cihaz testi (Simülasyon)
+## Single Device Testing (Simulation)
 
-Debug derlemesinde varsayılan: **Simülasyon modu açık**.
+Default for debug builds: **Simulation mode is enabled**.
 
-1. İlk açılışta ad + aile kodu girin
-2. **SOS** veya **Güvendeyim** gönderin
-3. **Mesajlar** → `SENT` ve ~2 sn sonra `SIM_Aile_Uyesi` → `RECEIVED`
-4. **Ayarlar** → simülasyon, SOS uyarıları, profil
+1. Enter your name and family code on the first launch.
+2. Send an **SOS** or **I'm Safe** message.
+3. **Messages** → `SENT` and ~2 secs later `SIM_Family_Member` → `RECEIVED`
+4. **Settings** → simulation, SOS alerts, profile adjustments.
 
-Detay: [TESTING.md](TESTING.md)
+Details: [TESTING.md](TESTING.md)
 
-## İki cihaz testi (Gerçek BLE)
+## Two Device Testing (Real BLE)
 
-1. Her iki telefonda **Ayarlar** → **Simülasyon modu** kapatın
-2. **Aynı aile kodu** ve farklı kullanıcı ID
-3. Bluetooth açık, tüm izinler verildi
-4. Cihaz A: SOS → Cihaz B: Mesajlar + SOS uyarısı
+1. Disable **Simulation mode** in **Settings** on both phones.
+2. Set the **same family code** but different user IDs on each device.
+3. Ensure Bluetooth is turned on and all permissions are granted.
+4. Device A: SOS → Device B: Receives message + Full-screen SOS alert.
 
-Release derlemesi varsayılan olarak simülasyon kapalıdır.
+*Note: Release builds have simulation mode disabled by default.*
 
-## Mimari
+## Architecture
 
-```
+```text
 ui/          → MainActivity, Messages, Settings, SosAlert
 ui/main/     → MainViewModel
 transport/   → BLE, Wi-Fi Direct, Fake (sim)
@@ -57,21 +57,23 @@ data/        → Room (messages, members)
 service/     → BleRelayService (foreground)
 ```
 
-## Sonraki adımlar
+## Next Steps
 
-- [ ] İki telefonla saha testi
-- [ ] Paket adı `com.example` → üretim paketi
-- [ ] Play Store imzalama ve gizlilik metni
+- [ ] Field testing with two physical devices
+- [ ] Refactor package name from `com.example` to production package
+- [ ] App signing for Play Store and privacy policy preparation
+
+## Screenshots
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22" src="https://github.com/user-attachments/assets/4e3e7537-afa8-416a-8662-7b2e267f4297" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22 (1)" src="https://github.com/user-attachments/assets/db8d0c89-d0c1-4213-8904-9f69f6ff86f0" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22 (2)" src="https://github.com/user-attachments/assets/d806dbdb-a33a-4a6a-a2b8-99b4cd4d25db" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23" src="https://github.com/user-attachments/assets/a872346a-7512-4d46-b412-44ff490300dd" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23 (1)" src="https://github.com/user-attachments/assets/7cd5c5fc-b9c3-4f10-b77e-6c9f9663d18b" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23 (2)" src="https://github.com/user-attachments/assets/e9a2b72e-f4fc-4c7f-a555-641173c57700" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24" src="https://github.com/user-attachments/assets/db6349e3-cb7e-4040-b2b4-66f7310ee294" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (1)" src="https://github.com/user-attachments/assets/8422d2f4-cb53-4558-a341-13f0f24088e6" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (2)" src="https://github.com/user-attachments/assets/d222cd15-49f3-499a-a306-67822681d80c" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (3)" src="https://github.com/user-attachments/assets/bcba8065-aa72-4e07-9cc8-fea17a2ad4e4" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (4)" src="https://github.com/user-attachments/assets/924bfc46-35c2-4d7c-884a-9dad1022ef91" />
 
 
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24" src="https://github.com/user-attachments/assets/87eb2f37-830c-434f-924f-fb08baefcce2" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (4)" src="https://github.com/user-attachments/assets/73a26c24-31a9-4c98-8ecd-42f5a678c528" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (3)" src="https://github.com/user-attachments/assets/43c79fed-e585-403e-a8c0-9c28f144651f" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (2)" src="https://github.com/user-attachments/assets/f53ec3d3-b39c-4e25-a61c-65e4588a99a5" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (1)" src="https://github.com/user-attachments/assets/972625ec-d6d2-4d04-b299-2d18e69a88c6" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23" src="https://github.com/user-attachments/assets/85f365fa-66ea-404d-accd-9e9236158880" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23 (2)" src="https://github.com/user-attachments/assets/9944cbb0-d8aa-49ac-880b-f168bced7a63" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23 (1)" src="https://github.com/user-attachments/assets/a1326bb7-9ff0-4039-b97c-e399ecbede19" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22" src="https://github.com/user-attachments/assets/fe780d63-8eee-40d4-bf8f-6f464fdee0f4" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22 (2)" src="https://github.com/user-attachments/assets/52f4404d-e81e-4348-96ad-eca3b7d29d31" />
-<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22 (1)" src="https://github.com/user-attachments/assets/c7f04e25-c77b-4933-8b3b-913daee515f4" />
