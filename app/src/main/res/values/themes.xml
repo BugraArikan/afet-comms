@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AfetComms" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="android:colorBackground">@color/md_theme_surface</item>
+    </style>
+
+    <style name="Theme.AfetComms" parent="Base.Theme.AfetComms" />
+</resources>
