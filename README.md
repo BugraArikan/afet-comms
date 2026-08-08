@@ -62,3 +62,16 @@ service/     → BleRelayService (foreground)
 - [ ] İki telefonla saha testi
 - [ ] Paket adı `com.example` → üretim paketi
 - [ ] Play Store imzalama ve gizlilik metni
+
+
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24" src="https://github.com/user-attachments/assets/87eb2f37-830c-434f-924f-fb08baefcce2" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (4)" src="https://github.com/user-attachments/assets/73a26c24-31a9-4c98-8ecd-42f5a678c528" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (3)" src="https://github.com/user-attachments/assets/43c79fed-e585-403e-a8c0-9c28f144651f" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (2)" src="https://github.com/user-attachments/assets/f53ec3d3-b39c-4e25-a61c-65e4588a99a5" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 24 (1)" src="https://github.com/user-attachments/assets/972625ec-d6d2-4d04-b299-2d18e69a88c6" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23" src="https://github.com/user-attachments/assets/85f365fa-66ea-404d-accd-9e9236158880" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23 (2)" src="https://github.com/user-attachments/assets/9944cbb0-d8aa-49ac-880b-f168bced7a63" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 23 (1)" src="https://github.com/user-attachments/assets/a1326bb7-9ff0-4039-b97c-e399ecbede19" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22" src="https://github.com/user-attachments/assets/fe780d63-8eee-40d4-bf8f-6f464fdee0f4" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22 (2)" src="https://github.com/user-attachments/assets/52f4404d-e81e-4348-96ad-eca3b7d29d31" />
+<img width="250" alt="WhatsApp Image 2026-08-08 at 18 21 22 (1)" src="https://github.com/user-attachments/assets/c7f04e25-c77b-4933-8b3b-913daee515f4" />
